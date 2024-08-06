@@ -7,13 +7,9 @@ function GuessResults({ guesses }) {
   return (
     <>
       <div className="guess-results">
-        {range(0, NUM_OF_GUESSES_ALLOWED).map((i) =>
-          guesses[i] ? (
-            <Guess guess={guesses[i]} key={i} id={i} />
-          ) : (
-            <Guess guess={"     "} key={i} id={i} />
-          )
-        )}
+        {range(0, NUM_OF_GUESSES_ALLOWED).map((i) => (
+          <Guess guess={guesses[i] ? guesses[i] : "     "} key={i} id={i} />
+        ))}
       </div>
     </>
   );
